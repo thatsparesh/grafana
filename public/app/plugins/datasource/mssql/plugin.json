@@ -21,6 +21,7 @@
   "tables": true,
 
   "queryOptions": {
-    "minInterval": true
+    "minInterval": true,
+    "maxDataPoints": true
   }
 }

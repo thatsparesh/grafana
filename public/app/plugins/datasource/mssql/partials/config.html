@@ -92,6 +92,19 @@
 </div>
 
 <div class="gf-form-group">
+	<div class="gf-form-inline">
+		<div class="gf-form">
+			<span class="gf-form-label width-9">Max Data points</span>
+			<input type="text" class="gf-form-input width-6" ng-model="ctrl.current.jsonData.maxDataPoints" spellcheck='false' placeholder="auto"></input>
+			<info-popover mode="right-absolute">
+				The maximum data points the query should return. For graphs this is automatically set to one data point per
+				pixel.				
+			</info-popover>
+		</div>
+	</div>
+</div>
+
+<div class="gf-form-group">
 	<div class="grafana-info-box">
 		<h5>User Permission</h5>
 		<p>

@@ -6,13 +6,22 @@ export class MssqlDatasource {
   name: any;
   responseParser: ResponseParser;
   interval: string;
+  maxDataPoints: number;
 
   /** @ngInject */
   constructor(instanceSettings, private backendSrv, private $q, private templateSrv) {
     this.name = instanceSettings.name;
     this.id = instanceSettings.id;
     this.responseParser = new ResponseParser(this.$q);
-    this.interval = (instanceSettings.jsonData || {}).timeInterval;
+    const jsonData = (instanceSettings.jsonData || {});
+    this.interval = jsonData.timeInterval;
+    this.maxDataPoints = jsonData.maxDataPoints;
+  }
+
+  getQueryOptionsInfo() {
+    return {
+      maxDataPoints: true,
+    };
   }
 
   interpolateVariable(value, variable) {
